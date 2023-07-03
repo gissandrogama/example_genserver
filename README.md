@@ -47,7 +47,7 @@ iex> GenServer.call pid, :get
 
 Observe que o valor foi retornado depois de 2 segundos e o terminal `iex` ficou bloqueado para inserir novas chamadas até receber a resposta.
 
-- Chamada assincrona:
+- Chamada assíncrona:
 
 ```elixir
 iex> GenServer.cast pid, :reset
@@ -56,12 +56,12 @@ iex>
 value has been reset
 ```
 
-Observe que aqui o foi retornado um `:ok` e o terminal foi liberado para novas chamadas e depois de 2 segundos recebemos um mensagem.
+Observe que aqui o foi retornado um `:ok` e o terminal foi liberado para novas chamadas e depois de 2 segundos recebemos uma mensagem.
 Dessa forma o fluxo não é bloqueado e podemos realizar novas chamadas.
 
 - Chamadas de informação:
 
-Aqui são todas as chamadas que não são enviadas via `cast` ou `call`, também funcionam de forma assincrona.
+Aqui são todas as chamadas que não são enviadas via `cast` ou `call`, também funcionam de forma assíncrona.
 
 ```elixir
 iex(5)> send pid, :work
